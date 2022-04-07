@@ -48,7 +48,7 @@ router.get('/hello', function (req, res) {
 
     let moviesArr = [["horror", "The Shining"], ["drama", "Titanic"], ["thriller", "Shutter Island"], ["fantasy", "Pans Labyrinth"]]
     console.log(_.fromPairs(moviesArr));
-    res.send('Problem 4');
+    res.send('This assignment complete also');
 });
 
 module.exports = router;
