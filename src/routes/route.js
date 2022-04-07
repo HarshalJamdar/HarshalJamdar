@@ -3,15 +3,29 @@ const logger = require('./logger')
 
 const router = express.Router();
 
-router.get('/test-me', function (req, res) {
+// router.get('/test-me', function (req, res) {
+//     console.log('------------------')
+//     console.log(req)
+//     console.log('------------------')
+//     console.log('These are the request query parameters: ', req.query)
+//     res.send('My first ever api!')
+// });
+
+router.get('/all-candidates', function (req, res) {
     console.log('------------------')
-    console.log(req)
-    console.log('------------------')
-    console.log('These are the request query parameters: ', req.query)
-    res.send('My first ever api!')
+     console.log(req)
+     console.log('------------------')
+     console.log('These are the request query parameters: ', req.query)
+     res.send('["Harshal","Asma","Ritu"]')
 });
 
-
+router.get('/candidates', function (req, res) {
+    console.log('------------------')
+     console.log(req)
+     console.log('------------------')
+     console.log('These are the request query parameters: ', req.query)
+     res.send('["Harshal","Asma","Ritu","Pooja","Neha"]')
+});
 
 
 module.exports = router;
