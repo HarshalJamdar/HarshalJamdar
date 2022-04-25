@@ -11,7 +11,7 @@ const createUser = async function (abc, pqr) {
   let savedData = await userModel.create(data);
   pqr.status(201).send({ msg: savedData });
 }catch(err){
-  pqr.status(400).send({msg:"Bad Request"})
+  pqr.status(500).send({msg:err.message})
 }
 };
 
@@ -40,7 +40,7 @@ try{
   res.setHeader("x-auth-token", token);
   res.send({ status: true, data: token });
  }catch(err){
-  res.status(400).send({msg:"Bad Request"})
+  res.status(500).send({msg:err.message})
 }
 
 
@@ -56,7 +56,7 @@ const getUserData = async function (req, res) {
     return res.status(404).send({ status: false, msg: "No such user exists" });
   res.send({ status: true, data: userDetails });
 }catch(err){
-  res.status(404).send({msg:"Not found"})
+  res.status(500).send({msg:err.message})
 }
 
 };
@@ -79,7 +79,7 @@ const updateUser = async function (req, res) {
     );
   res.send({ status: true, data: updatedUser });
 }catch(err){
-  res.status(404).send({msg:"Not found"})
+  res.status(500).send({msg:err.message})
 }
 
 };
@@ -105,7 +105,7 @@ try{
 
   res.send({ status:true, data: updatedUser });
 }catch(err){
-  res.status(404).send({msg:"Not found"})
+  res.status(500).send({msg:err.message})
 }
 
 };

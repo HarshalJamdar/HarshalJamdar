@@ -42,7 +42,7 @@ try{
     next();
     }
   }catch(err){
-    res.status(400).send({msg: err})
+    res.status(500).send({msg:err.message})
   }
 }
 
